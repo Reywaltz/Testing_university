@@ -22,7 +22,7 @@ class Toplevel1:
         top.geometry(f"{W_WIDTH}x{W_HEIGHT}")
         top.minsize(W_WIDTH, W_HEIGHT)
         top.resizable(0, 0)
-        top.title("Преобразователь слов")
+        top.title("Преобразователь предложений")
 
         self.Input_field = tk.Text(top)
         self.Input_field.place(x=W_WIDTH//2, y=W_HEIGHT//2, height=10)
@@ -49,6 +49,11 @@ class Toplevel1:
         """Метод обратчика кнопки"""
         self.Listbox1.delete(0, 'end')
         form_input = self.Input_field.get(1.0, "end-1c")
+
+        if len(form_input) > 1000:
+            messagebox.showerror("Ошибка вввода",
+                                 "Превышение длины входной строки. Повторите ввод") # noqa
+            return
 
         format_input = additions.prepare_input(form_input)
         if (format_input == []) or (format_input == ['']):
