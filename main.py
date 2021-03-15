@@ -1,4 +1,4 @@
-from additions import prepare_input, sentence_transform
+from internal.gui import gui
 
 # TODO
 """
@@ -10,8 +10,4 @@ from additions import prepare_input, sentence_transform
 """
 
 if __name__ == "__main__":
-    sentence = "Сложное предложение это       -       предложение,,,,, состоящее из двух и более простых Георгий"
-
-    res = prepare_input(sentence)
-    r1 = sentence_transform(res)
-    print("\n".join(r1))
+    gui.start_GUI()
