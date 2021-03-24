@@ -2,4 +2,4 @@
 .pytest*
 __pycache__
 venv
-!*.toml
+lab-7/cfg.toml
