@@ -1,4 +1,5 @@
 .vscode
 .pytest*
 __pycache__
-/venv
+venv
+!*.toml
